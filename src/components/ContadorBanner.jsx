@@ -16,7 +16,7 @@ export default function ContadorBanner() {
   
     useEffect(() => {
       const intervalo = setInterval(() => {
-        setDuration((prevDuracion) => prevDuracion - 1);
+        setDuration((prevDuration) => prevDuration - 1);
       }, 1000);
   
       return () => clearInterval(intervalo);
