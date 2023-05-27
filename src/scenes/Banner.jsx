@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import ContadorBanner from "../components/ContadorBanner";
+import FormularioBanner from "../components/FormularioBanner";
 
 //#region Styled Components
 
@@ -37,7 +38,6 @@ const ButtonStyled = styled.a`
   font-size: 22px;
   color: #000000;
   position: relative;
-  z-index: 1;
   -webkit-transition: tra;
   transition: all 0.2s ease-in-out;
   border: 2px solid #fff;
@@ -49,6 +49,21 @@ export default function Banner() {
   const horasRef = useRef(null);
   const minutosRef = useRef(null);
   const segundosRef = useRef(null);
+
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowForm(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
+
   return (
     <BannerStyled>
       {/* Titulo del banner */}
@@ -72,7 +87,7 @@ export default function Banner() {
           </ButtonStyled>{" "}
         </div>
       </div>
-      {/* Colocar el componente ContadorBanner aquí */}
+      {showForm && <FormularioBanner onClose={handleCloseForm} />}
     </BannerStyled>
   );
 }
