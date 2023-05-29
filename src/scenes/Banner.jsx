@@ -8,20 +8,53 @@ import FormularioBanner from "../components/FormularioBanner";
 const BannerStyled = styled.div`
   display: flex;
   top: 0;
-  padding: 2rem;
+  padding: 2rem 6rem;
   font-size: 22px;
   font-weight: bold;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #ff0000;
   color: #000000;
 
-  @media only screen and (max-width: 950px) {
+  //mediaquery 1080-840
+
+  @media only screen and (max-width: 1080px) {
     flex-direction: column;
-    padding-bottom: 0.5rem;
+    padding: 0 4rem 0.5rem;
     > div {
       margin-bottom: 1rem;
     }
+  }
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  max-width: 90%;
+  @media only screen and (max-width: 1080px) {
+    margin-top: 1rem;
+  }
+  @media only screen and (max-width: 1080px) {
+    margin-top: 1rem;
+  }
+`;
+
+const CounterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  >div{
+    margin-left: 3rem;
+  }
+
+  @media only screen and (min-width: 840px) and (max-width: 1080px) {
+    justify-content: space-around;
+    padding: 0 3rem 0.2rem;
+    margin-left: 0;
+  }
+  @media only screen and (max-width: 840px) {
+    flex-direction: column;
+    margin-left: 0;
   }
 `;
 
@@ -39,8 +72,17 @@ const ButtonStyled = styled.a`
   color: #000000;
   position: relative;
   -webkit-transition: tra;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   border: 2px solid #fff;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media only screen and (max-width: 840px) {
+    display: flex;
+    margin-top: 1rem;
+  }
 `;
 
 //#endregion
@@ -55,11 +97,11 @@ export default function Banner() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowForm(true);
-    }, 1000);
+    }, 100000);
 
     return () => clearTimeout(timeout);
   }, []);
-  
+
   const handleCloseForm = () => {
     setShowForm(false);
   };
@@ -67,13 +109,13 @@ export default function Banner() {
   return (
     <BannerStyled>
       {/* Titulo del banner */}
-      <div style={{ display: "flex", maxWidth: "70%" }}>
+      <TitleContainer>
         Clase gratuita
         <SpanStyled>con Chris Sensei</SpanStyled>
-      </div>
+      </TitleContainer>
       {/* Contador regresivo del banner */}
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <div style={{ marginLeft: "5rem" }}>
+      <CounterContainer>
+        <div className="NumberContainer">
           <ContadorBanner
             horasRef={horasRef}
             minutosRef={minutosRef}
@@ -81,12 +123,12 @@ export default function Banner() {
           />
         </div>
         {/* Botón del banner */}
-        <div style={{ right: "20rem", marginLeft: "40px" }}>
+        <div>
           <ButtonStyled type="button" href="#">
             UNIRME A LA CLASE
           </ButtonStyled>{" "}
         </div>
-      </div>
+      </CounterContainer>
       {showForm && <FormularioBanner onClose={handleCloseForm} />}
     </BannerStyled>
   );

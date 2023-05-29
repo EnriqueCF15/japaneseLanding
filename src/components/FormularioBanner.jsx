@@ -25,13 +25,12 @@ const FormStyled = styled.div`
   max-width: 700px;
   text-align: center;
   border-radius: 20px;
-  height: 50%;
+  height: 23rem;
 `;
 
 const FormTittle = styled.h2`
-color: #f40000;
-`
-
+  color: #f40000;
+`;
 
 const CloseButton = styled.div`
   position: absolute;
@@ -51,7 +50,6 @@ const CloseButton = styled.div`
   align-items: center;
   font-weight: lighter;
   line-height: 20px;
-  
 
   &:hover {
     transform: scale(1.1);
@@ -59,12 +57,12 @@ const CloseButton = styled.div`
 `;
 
 const ContainerStyled = styled.div`
-margin-top: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-`
+  margin-top: 20px;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const InputStyled = styled.input`
   font-size: 16px;
@@ -81,31 +79,30 @@ const InputStyled = styled.input`
   }
 
   &::placeholder {
-    color: gray; 
+    color: gray;
     font-size: 18px;
   }
 `;
 
-
 const ButtonStyled = styled.button`
-margin-top: 1rem;
-text-decoration: none;
-font-size: 40px;
-font-family: inherit;
-font-weight: bold;
-padding: 10px 40px;
-border-radius: 20px;
-background-color: red;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 20px;
+  background-color: red;
   color: white;
   border: none;
   cursor: pointer;
-  transition: .2s;
-  
+  transition: 0.2s;
+
   &:hover {
-      transform: scale(1.1);
-    background-color: #DD0000;
+    transform: scale(1.1);
+    background-color: #dd0000;
   }
-`
+`;
 
 //#endregion
 
@@ -119,7 +116,7 @@ export default function FormularioBanner({ onClose }) {
         <ContainerStyled>
           <InputStyled type="text" placeholder="Primer Nombre" />
           <InputStyled type="email" placeholder="Correo Electrónico" />
-          <ButtonStyled >¡INGRESA AQUÍ!</ButtonStyled>
+          <ButtonStyled>¡INGRESA AQUÍ!</ButtonStyled>
         </ContainerStyled>
       </FormStyled>
     </OverlayStyled>

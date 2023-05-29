@@ -39,7 +39,7 @@ export default function ContadorBanner() {
   
       if (duration < 0) {
         // clearInterval(intervalo);
-        alert('¡Tiempo terminado!');
+        // alert('¡Tiempo terminado!');
       }
     }, [duration]);
   
