@@ -46,7 +46,7 @@ a{
 }
 a:hover{
 	text-decoration: none;
-	color: #ca0000;
+	
 }
 button:focus{
 	outline: none;
