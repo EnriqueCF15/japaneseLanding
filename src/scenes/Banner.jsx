@@ -16,6 +16,7 @@ const BannerStyled = styled.div`
   background-color: #ff0000;
   color: #000000;
 
+
   //mediaquery 1080-840
 
   @media only screen and (max-width: 1080px) {
@@ -77,6 +78,7 @@ const ButtonStyled = styled.a`
 
   &:hover {
     transform: scale(1.1);
+    color: #ca0000;
   }
 
   @media only screen and (max-width: 840px) {
@@ -90,14 +92,14 @@ const ButtonStyled = styled.a`
 export default function Banner() {
   const horasRef = useRef(null);
   const minutosRef = useRef(null);
-  const segundosRef = useRef(null);
+  const segundosRef = useRef(null); 
 
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowForm(true);
-    }, 100000);
+    }, 2000000);
 
     return () => clearTimeout(timeout);
   }, []);
