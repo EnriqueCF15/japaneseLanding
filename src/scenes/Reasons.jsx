@@ -19,7 +19,6 @@ const FirstReason = styled.div`
   > .firstContainer {
     max-width: 1200px;
     display: flex;
-    width: 100%;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -29,7 +28,7 @@ const FirstReason = styled.div`
       > .textContainer {
         flex-direction: column;
         width: 50%;
-        float: left;
+
         margin: 20px;
         > h1,
         h3 {
@@ -38,12 +37,14 @@ const FirstReason = styled.div`
       }
       > .image {
         display: block;
+      
         justify-content: center;
         align-items: center;
-        width: 400px; /* Establece el ancho deseado en píxeles */
-        height: 400px; /* Establece la altura deseada en píxeles */
+        width: 400px;
+        height: 400px;
         margin: 15px;
         > img {
+          min-width: 90%;
           height: 100%;
           width: 100%;
           object-fit: cover;
@@ -53,6 +54,7 @@ const FirstReason = styled.div`
   }
 `;
 
+// media query 950 px
 const SecondReason = styled(FirstReason)`
   background-color: #ff3434;
   .textContainer {

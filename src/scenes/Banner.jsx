@@ -16,7 +16,6 @@ const BannerStyled = styled.div`
   background-color: #ff0000;
   color: #000000;
 
-
   //mediaquery 1080-840
 
   @media only screen and (max-width: 1150px) {
@@ -44,18 +43,23 @@ const CounterContainer = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  >div{
+  > div {
     margin-left: 3rem;
   }
 
   @media only screen and (min-width: 840px) and (max-width: 1150px) {
     justify-content: space-around;
     padding: 0 3rem 0.2rem;
-    margin-left: 0;
+    > div {
+      margin-left: 0;
+    }
   }
   @media only screen and (max-width: 840px) {
     flex-direction: column;
     margin-left: 0;
+    > div {
+      margin-left: 0;
+    }
   }
 `;
 
@@ -93,7 +97,7 @@ const ButtonStyled = styled.a`
 export default function Banner() {
   const horasRef = useRef(null);
   const minutosRef = useRef(null);
-  const segundosRef = useRef(null); 
+  const segundosRef = useRef(null);
 
   const [showForm, setShowForm] = useState(false);
 
