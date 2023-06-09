@@ -19,7 +19,7 @@ const BannerStyled = styled.div`
 
   //mediaquery 1080-840
 
-  @media only screen and (max-width: 1080px) {
+  @media only screen and (max-width: 1150px) {
     flex-direction: column;
     padding: 0 4rem 0.5rem;
     > div {
@@ -31,10 +31,10 @@ const BannerStyled = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   max-width: 90%;
-  @media only screen and (max-width: 1080px) {
+  @media only screen and (max-width: 1150px) {
     margin-top: 1rem;
   }
-  @media only screen and (max-width: 1080px) {
+  @media only screen and (max-width: 1150px) {
     margin-top: 1rem;
   }
 `;
@@ -48,7 +48,7 @@ const CounterContainer = styled.div`
     margin-left: 3rem;
   }
 
-  @media only screen and (min-width: 840px) and (max-width: 1080px) {
+  @media only screen and (min-width: 840px) and (max-width: 1150px) {
     justify-content: space-around;
     padding: 0 3rem 0.2rem;
     margin-left: 0;
@@ -68,8 +68,9 @@ const ButtonStyled = styled.a`
   display: inline-block;
   font-weight: 700;
   background: #f8f8f8;
-  padding: 10px 30px;
-  font-size: 22px;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 28px;
   color: #000000;
   position: relative;
   -webkit-transition: tra;

@@ -22,12 +22,13 @@ const HeroSection = styled.section`
   position: relative;
   color: #ff0000;
   padding: 3rem 0;
-  background-image: linear-gradient(rgb(255, 187, 187,0.4), rgb(255, 255, 255,0.9)), url('../../public/assets/fuji_background.jpg');
+  background-image: linear-gradient(rgb(255, 187, 187,0.1), rgb(255, 255, 255,0.95)), url('../../public/assets/fuji_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
-`;
+  padding-bottom: 4rem;
+  
+  `;
 
 const HeroContainer = styled.div`
   text-align: center;
@@ -85,7 +86,7 @@ const ButtonStyled = styled.a`
   color: #ffffff;
   -webkit-transition: tra;
   transition: all 0.2s ease-in-out;
-
+  margin-bottom: 1.5rem;
   border-radius: 20px;
   animation: ${moveAnimation} 2s infinite;
 
@@ -110,6 +111,9 @@ const ButtonStyled = styled.a`
   }
 `;
 
+const StyledSubtitle = styled.h3`
+  font-style: italic;
+`
 //#endregion
 
 export default function Hero_Section() {
@@ -139,6 +143,9 @@ export default function Hero_Section() {
             <span className="mobile-text">Ingresa aquí</span>
           </ButtonStyled>
         </div>
+        <StyledSubtitle>
+          100% GRATUITA - ¡Inicia la clase ahora!
+        </StyledSubtitle>
       </HeroContainer>
     </HeroSection>
   );
