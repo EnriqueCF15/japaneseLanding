@@ -22,7 +22,7 @@ const HeroSection = styled.section`
   position: relative;
   color: #ff0000;
   padding: 3rem 0;
-  background-image: linear-gradient(rgb(255, 187, 187,0.1), rgb(255, 255, 255,0.95)), url('../../public/assets/fuji_background.jpg');
+  background-image: linear-gradient(rgb(255, 187, 187,0.1), rgb(255, 255, 255,0.95)), url('../assets/fuji_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
