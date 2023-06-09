@@ -61,7 +61,7 @@ p{
 	color: #576074;
 }
 img{
-	max-width: 100%;
+	/* max-width: 100%; */
 }
 .text-gradient {
 	background-clip: text;

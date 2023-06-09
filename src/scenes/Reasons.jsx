@@ -12,9 +12,14 @@ const TitleStyled = styled.p`
   color: white;
   background-color: black;
 `;
-const ReasonsStyled = styled.div`
+const FirstReason = styled.div`
+  padding: 2rem;
+  background-color: white;
+
   > .firstContainer {
-    max-width: fit-content;
+    max-width: 1200px;
+    display: flex;
+    width: 100%;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -23,7 +28,8 @@ const ReasonsStyled = styled.div`
       justify-content: space-between;
       > .textContainer {
         flex-direction: column;
-        width: 35rem;
+        width: 50%;
+        float: left;
         margin: 20px;
         > h1,
         h3 {
@@ -31,17 +37,34 @@ const ReasonsStyled = styled.div`
         }
       }
       > .image {
-        width: 30rem;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 400px; /* Establece el ancho deseado en píxeles */
+        height: 400px; /* Establece la altura deseada en píxeles */
         margin: 15px;
         > img {
-          width: calc(100% - 20px);
-          height: calc(100% - 20px);
+          height: 100%;
+          width: 100%;
           object-fit: cover;
-          margin: 10px;
         }
       }
     }
   }
+`;
+
+const SecondReason = styled(FirstReason)`
+  background-color: #ff3434;
+  .textContainer {
+    > h1,
+    h3 {
+      color: white;
+    }
+  }
+`;
+
+const ThirdReason = styled(FirstReason)`
+  background-color: #ffffff;
 `;
 //#endregion
 
@@ -52,7 +75,7 @@ export default function Reasons() {
         3 Razones por las que realmente aprenderás Japonés con nosotros
       </TitleStyled>
       {/* First Reason */}
-      <ReasonsStyled>
+      <FirstReason>
         <div className="firstContainer">
           <div className="secondContainer">
             <div className="textContainer">
@@ -74,9 +97,9 @@ export default function Reasons() {
             </div>
           </div>
         </div>
-      </ReasonsStyled>
+      </FirstReason>
       {/* Second Reason */}
-      <ReasonsStyled>
+      <SecondReason>
         <div className="firstContainer">
           <div className="secondContainer">
             <div className="image">
@@ -98,9 +121,9 @@ export default function Reasons() {
             </div>
           </div>
         </div>
-      </ReasonsStyled>
+      </SecondReason>
       {/* Third Reason */}
-      <ReasonsStyled>
+      <ThirdReason>
         <div className="firstContainer">
           <div className="secondContainer">
             <div className="textContainer">
@@ -122,7 +145,7 @@ export default function Reasons() {
             </div>
           </div>
         </div>
-      </ReasonsStyled>
+      </ThirdReason>
     </section>
   );
 }
